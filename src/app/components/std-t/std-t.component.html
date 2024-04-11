@@ -1,0 +1,25 @@
+
+
+<table class="table table-bordered mt-4" *ngIf="getSinfo.length > 0;else nodata">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stdI of getSinfo ; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{stdI.fname}}</td>
+            <td>{{stdI.lname}}</td>
+            <td>{{stdI.email}}</td>
+            <td>{{stdI.contact}}</td>
+        </tr>
+    </tbody>
+</table>
+<ng-template #nodata>
+    <p class="alert alert-warning">No student info</p>
+</ng-template>
